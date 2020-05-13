@@ -170,10 +170,10 @@
             </objects>
             <point key="canvasLocation" x="-948" y="610"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorite Reminder View Controller-->
         <scene sceneID="Xmd-dx-c1F">
             <objects>
-                <viewController id="C3D-8T-7xA" sceneMemberID="viewController">
+                <viewController id="C3D-8T-7xA" customClass="FavoriteReminderViewController" customModule="RemaindersApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Xx-nh-E2q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,6 +197,10 @@
                         <viewLayoutGuide key="safeArea" id="OpK-jZ-PdQ"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="CVH-ub-k0X"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="RfG-wr-z4F" id="QSG-t1-sSb"/>
+                        <outlet property="titleLabel" destination="b3T-8D-gWx" id="5Tn-dC-dQ7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPY-aP-ZEs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
