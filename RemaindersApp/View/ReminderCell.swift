@@ -15,6 +15,7 @@ class ReminderCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     
     func update(reminder: Reminder) {
+        
         titleLabel.text = reminder.title
         
         let dateFormatter = DateFormatter()

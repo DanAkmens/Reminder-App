@@ -17,6 +17,7 @@
 		4C17EDA0246C29EF00B2E07A /* RemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C17ED9F246C29EF00B2E07A /* RemindersViewController.swift */; };
 		4C17EDA2246C2A7200B2E07A /* ReminderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C17EDA1246C2A7200B2E07A /* ReminderCell.swift */; };
 		4C17EDA4246C48A800B2E07A /* FavoriteReminderViewConytoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C17EDA3246C48A800B2E07A /* FavoriteReminderViewConytoller.swift */; };
+		4C17EDA6246D6B8300B2E07A /* NewReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C17EDA5246D6B8300B2E07A /* NewReminderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		4C17ED9F246C29EF00B2E07A /* RemindersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersViewController.swift; sourceTree = "<group>"; };
 		4C17EDA1246C2A7200B2E07A /* ReminderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCell.swift; sourceTree = "<group>"; };
 		4C17EDA3246C48A800B2E07A /* FavoriteReminderViewConytoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteReminderViewConytoller.swift; sourceTree = "<group>"; };
+		4C17EDA5246D6B8300B2E07A /* NewReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				4C17ED9F246C29EF00B2E07A /* RemindersViewController.swift */,
 				4C17EDA3246C48A800B2E07A /* FavoriteReminderViewConytoller.swift */,
+				4C17EDA5246D6B8300B2E07A /* NewReminderViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C17ED9C246AFE1F00B2E07A /* Reminder.swift in Sources */,
+				4C17EDA6246D6B8300B2E07A /* NewReminderViewController.swift in Sources */,
 				4C17EDA2246C2A7200B2E07A /* ReminderCell.swift in Sources */,
 				4C17ED80246AFBFF00B2E07A /* AppDelegate.swift in Sources */,
 				4C17ED82246AFBFF00B2E07A /* SceneDelegate.swift in Sources */,

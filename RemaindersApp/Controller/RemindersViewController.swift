@@ -10,6 +10,14 @@ import UIKit
 
 class RemindersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var tableview: UITableView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // this method will call data source methods below in order to refresh itself
+        tableview.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ReminderService.shared.getCount()
     }

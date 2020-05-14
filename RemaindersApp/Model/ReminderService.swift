@@ -23,7 +23,7 @@ class ReminderService {
         for (index, element) in reminders.enumerated() {
             // element date - 02/01/2020
             // reminder date - 01/01/2020
-            if element.date.timeIntervalSince1970 > reminder.date.timeIntervalSince1970 {
+            if element.date.timeIntervalSince1970 > reminder.date.timeIntervalSince1970  {
                 print(element.date.timeIntervalSince1970)
                 print(reminder.date.timeIntervalSince1970)
                 indexToInsert = index
