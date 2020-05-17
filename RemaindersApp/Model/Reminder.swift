@@ -9,7 +9,7 @@
 import Foundation
 
 // data storage
-class Reminder {
+class Reminder: Codable {
     var title: String
     var date: Date
     var isCompleted: Bool
