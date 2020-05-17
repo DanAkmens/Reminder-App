@@ -57,6 +57,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="w9E-pA-MbQ" id="DG4-Qd-f61"/>
+                                            <outlet property="infoButton" destination="l1X-z5-WKb" id="FDK-FC-RCW"/>
                                             <outlet property="isCompletedView" destination="jyE-X5-YAz" id="79B-pQ-xim"/>
                                             <outlet property="titleLabel" destination="Yry-1c-UXy" id="3nU-Mh-vyH"/>
                                         </connections>
@@ -78,7 +79,11 @@
                         <viewLayoutGuide key="safeArea" id="PMf-er-7ij"/>
                     </view>
                     <navigationItem key="navigationItem" title="Reminders" id="6Ba-qs-pc6">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="wTh-hB-A2V"/>
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="wTh-hB-A2V">
+                            <connections>
+                                <action selector="editButtonDidPressed:" destination="yyB-LZ-TTA" id="5wi-0z-ob0"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="b2D-Bx-v6z">
                             <connections>
                                 <segue destination="cLB-uO-0CC" kind="show" identifier="AddSegue" id="Wzs-gZ-u1d"/>

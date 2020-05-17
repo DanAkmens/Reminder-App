@@ -14,9 +14,20 @@ class ReminderCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    func update(reminder: Reminder) {
+    
+    @IBOutlet weak var infoButton: UIButton!
+    
+    func update(reminder: Reminder, index: Int) {
         
         titleLabel.text = reminder.title
+        
+        infoButton.tag = index
+        
+        // dinamicaly changes corner radius
+        isCompletedView.layer.cornerRadius = isCompletedView.frame.size.width / 2.0
+        // creating border color of circle
+        isCompletedView.layer.borderColor = UIColor.lightGray.cgColor
+        
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yy hh:mma"
@@ -24,8 +35,11 @@ class ReminderCell: UITableViewCell {
         
         if reminder.isCompleted {
             isCompletedView.backgroundColor = UIColor.green
+            // isCompletedView doesn't display any border
+            isCompletedView.layer.borderWidth = 0.0
         } else {
             isCompletedView.backgroundColor = UIColor.white
+            isCompletedView.layer.borderWidth = 2.0
         }
     }
 }

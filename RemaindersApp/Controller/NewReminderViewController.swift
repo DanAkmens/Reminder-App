@@ -9,7 +9,7 @@
 import UIKit
 
 class NewReminderViewController: UIViewController {
-    
+    var reminderIndex: Int?
     
     @IBOutlet weak var titleTextField: UITextField!
     
@@ -17,12 +17,28 @@ class NewReminderViewController: UIViewController {
     
     @IBOutlet weak var completedSwitch: UISwitch!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let reminderIndex = reminderIndex {
+            let reminder = ReminderService.shared.getReminder(index: reminderIndex)
+            // populate our outlets
+            titleTextField.text = reminder.title
+            datePicker.date = reminder.date
+            completedSwitch.isOn = reminder.isCompleted
+        }
+    }
     
     @IBAction func saveButtonDidTapped(_ sender: UIButton) {
         // Create a reminder object
         let reminder = Reminder(title: titleTextField.text!, date: datePicker.date, isCompleted: completedSwitch.isOn)
-        
-        ReminderService.shared.create(reminder: reminder)
+        // Update a reminder
+        if let reminderIndex = reminderIndex {
+            ReminderService.shared.update(reminder: reminder, index: reminderIndex)
+        // else, create a new reminder
+        } else {
+            ReminderService.shared.create(reminder: reminder)
+        }
         
         navigationController!.popViewController(animated: true)
     }

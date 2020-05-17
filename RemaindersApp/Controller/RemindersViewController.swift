@@ -18,6 +18,30 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         tableview.reloadData()
     }
     
+    @IBAction func editButtonDidPressed(_ sender: UIBarButtonItem) {
+        if tableview.isEditing  {
+            sender.title = "Edit"
+            tableview.isEditing = false
+        } else {
+            sender.title = "Done"
+            tableview.isEditing = true
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // If user wants to delete a cell
+        if editingStyle == .delete {
+            ReminderService.shared.delete(index: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        ReminderService.shared.toggleCompleted(index: indexPath.row)
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ReminderService.shared.getCount()
     }
@@ -30,9 +54,18 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         let reminder = ReminderService.shared.getReminder(index: indexPath.row)
         
         // Update the cell base on the reminder object
-        cell.update(reminder: reminder)
+        cell.update(reminder: reminder, index: indexPath.row)
         
         // Return cell
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // identifier -> string we set in storyboard
+        // destination -> references the view controller we're transitioning into
+        if segue.identifier == "UpdateSegue", let newReminderViewController = segue.destination as? NewReminderViewController, let infoButton = sender as? UIButton {
+            
+            newReminderViewController.reminderIndex = infoButton.tag
+        }
     }
 }
